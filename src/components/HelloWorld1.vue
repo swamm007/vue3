@@ -1,22 +1,24 @@
 <template>
   <div>嗨 wide</div>
+  {{count}}
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { ref, defineComponent } from 'vue'
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      required: true
-    }
-  },
-  setup: () => {
-    const count = ref(0)
-    return { count }
-  }
-})
+// export default defineComponent({
+//   name: 'HelloWorld',
+//   props: {
+//     msg: {
+//       type: String,
+//       required: true
+//     }
+//   },
+//   setup: () => {
+//     const count = ref(0)
+//     return { count }
+//   }
+// })
+const count = ref(0)
 </script>
 
 <style scoped>
