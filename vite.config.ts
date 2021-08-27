@@ -9,5 +9,16 @@ export default defineConfig({
       find: '@com',
       replacement: resolve(__dirname, 'src/components')
     }]
+  },
+  server: {
+    port: 3000,
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    }
   }
 })
